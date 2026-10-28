@@ -10,14 +10,6 @@
   }
 
   body {
-    @apply bg-navyBlue-950 text-white antialiased;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .animate-float,
-  .animate-float-slow,
-  .animate-fade-up {
-    animation: none !important;
+    @apply bg-[#141a40] text-white antialiased;
   }
 }

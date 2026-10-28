@@ -2,24 +2,24 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 const SITE_URL = 'https://savvytechinnovation.com';
-const TITLE = 'Savvy Tech Innovation | Coming Soon';
-const DESCRIPTION =
-  'A new Savvy Tech Innovation is on its way. We engineer high-performance, custom-coded websites and apps for enterprise scale.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: TITLE,
-  description: DESCRIPTION,
+  title: {
+    default: 'Savvy Tech Innovation',
+    template: '%s | Savvy Tech Innovation',
+  },
+  description:
+    'Savvy Tech Innovation is building a brand new website. Contact us directly in the meantime.',
   authors: [{ name: 'Savvy Tech Innovation' }],
   creator: 'Savvy Tech Innovation',
   publisher: 'Savvy Tech Innovation',
   openGraph: {
     type: 'website',
     locale: 'en_US',
+    alternateLocale: ['es_ES'],
     url: SITE_URL,
     siteName: 'Savvy Tech Innovation',
-    title: TITLE,
-    description: DESCRIPTION,
     images: [
       {
         url: '/preview.png',
@@ -31,8 +31,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: TITLE,
-    description: DESCRIPTION,
     images: ['/preview.png'],
   },
   robots: {
