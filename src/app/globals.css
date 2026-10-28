@@ -1,0 +1,23 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-navyBlue-950 text-white antialiased;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-float-slow,
+  .animate-fade-up {
+    animation: none !important;
+  }
+}
