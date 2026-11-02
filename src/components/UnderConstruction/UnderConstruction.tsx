@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Letter, Phone } from '@solar-icons/react';
+import { Letter } from '@solar-icons/react';
 import { CONTACT_INFO } from '@/constants/site';
 
 type Language = 'en' | 'es';
@@ -49,7 +49,6 @@ const fadeUp = {
 const UnderConstruction: React.FC<UnderConstructionProps> = ({ language = 'en' }) => {
   const t = CONTENT[language];
   const year = new Date().getFullYear();
-  const phoneHref = `tel:${CONTACT_INFO.phone.replace(/[^\d+]/g, '')}`;
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-[#141a40] via-[#1a2352] to-[#0d6d91] text-white">
@@ -125,28 +124,9 @@ const UnderConstruction: React.FC<UnderConstructionProps> = ({ language = 'en' }
             {t.description}
           </motion.p>
 
-          {/* Progress bar */}
-          <motion.div
-            custom={0.4}
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            className="mt-10 w-full max-w-[420px]"
-            aria-hidden="true"
-          >
-            <div className="h-1.5 w-full overflow-hidden rounded-full bg-white/10">
-              <motion.div
-                initial={{ width: '0%' }}
-                animate={{ width: '72%' }}
-                transition={{ duration: 1.4, delay: 0.6, ease: 'easeOut' }}
-                className="h-full rounded-full bg-gradient-to-r from-[#0792c2] via-[#5b7df9] to-[#ff5527]"
-              />
-            </div>
-          </motion.div>
-
           {/* Contact */}
           <motion.div
-            custom={0.5}
+            custom={0.4}
             variants={fadeUp}
             initial="hidden"
             animate="visible"
@@ -155,20 +135,13 @@ const UnderConstruction: React.FC<UnderConstructionProps> = ({ language = 'en' }
             <p className="text-[13px] font-medium uppercase tracking-wider text-white/50">
               {t.contactLabel}
             </p>
-            <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
+            <div className="flex flex-col items-center">
               <a
                 href={`mailto:${CONTACT_INFO.email}`}
                 className="inline-flex items-center gap-2 rounded-full bg-[#ff5527] px-6 py-3 text-[15px] font-semibold text-white shadow-lg shadow-[#ff5527]/30 transition hover:bg-[#fe3a11]"
               >
                 <Letter size={20} />
                 {CONTACT_INFO.email}
-              </a>
-              <a
-                href={phoneHref}
-                className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-[15px] font-semibold text-white transition hover:border-white/50 hover:bg-white/5"
-              >
-                <Phone size={20} />
-                {CONTACT_INFO.phone}
               </a>
             </div>
           </motion.div>

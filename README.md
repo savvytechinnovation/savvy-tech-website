@@ -29,5 +29,5 @@ npm run start
 
 - `src/app/` - root layout, metadata and the `/` and `/es` routes
 - `src/components/UnderConstruction/` - the page component (EN/ES content inside)
-- `src/constants/site.ts` - contact email and phone
+- `src/constants/site.ts` - contact email
 - `public/` - logo, favicon and Open Graph preview
